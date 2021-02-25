@@ -59,7 +59,7 @@
         if (event.data.pluginMessage.type === "get-svg") {
           var request = new XMLHttpRequest();
           var url =
-            "https://cors-anywhere.herokuapp.com/https://gitlab.com/SUSE-UIUX/eos-icons/-/raw/master/svg/" +
+            "https://cdn.jsdelivr.net/npm/eos-icons@latest/svg/" +
             event.data.pluginMessage.searchText +
             ".svg";
           request.open("GET", url);
