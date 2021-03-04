@@ -1,0 +1,87 @@
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/eos-icons/dist/css/eos-icons.css"
+/>
+<style>
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #e5e5e5;
+  }
+  #container {
+    width: 90%;
+    margin: auto;
+    margin-top: 10vh;
+  }
+  #search {
+    border: 1px solid #000;
+    display: block;
+    text-align: left;
+    width: 70%;
+    padding: 10px;
+  }
+  #submit {
+    width: 25%;
+  }
+  .flex-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+  }
+  #loading {
+    display: none;
+    padding-top: 1rem;
+  }
+</style>
+<div id="container">
+  <p class="title">EOS-icons</p>
+  <div class="flex-container">
+    <input id="search" placeholder="Search for an icon" />
+    <button id="submit">Search</button>
+  </div>
+  <p id="loading">Loading...</p>
+  <script>
+    document.getElementById("search").focus();
+    document.getElementById("submit").onclick = () => {
+      document.getElementById("loading").style.display = "initial";
+      const searchText = document.getElementById("search").value;
+      parent.postMessage(
+        { pluginMessage: { type: "search-icons", searchText } },
+        "*"
+      );
+    };
+    window.onmessage = async (event) => {
+      try {
+        if (event.data.pluginMessage.type === "get-svg") {
+          var request = new XMLHttpRequest();
+          var url =
+            "https://cdn.jsdelivr.net/npm/eos-icons@latest/svg/" +
+            event.data.pluginMessage.searchText +
+            ".svg";
+          request.open("GET", url);
+          request.responseType = "document";
+          request.onload = () => {
+            const svg = new XMLSerializer().serializeToString(request.response);
+            parent.postMessage(
+              {
+                pluginMessage: {
+                  type: "handle-icon",
+                  svg: svg,
+                },
+              },
+              "*"
+            );
+            document.getElementById("loading").style.display = "none";
+          };
+          request.send();
+        }
+      } catch (e) {
+        console.log(e);
+      }
+    };
+  </script>
+</div>
