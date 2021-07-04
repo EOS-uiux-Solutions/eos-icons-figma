@@ -4,11 +4,14 @@
   "description": "Your Figma plugin",
   "main": "code.js",
   "scripts": {
-    "build": "tsc -p tsconfig.json"
+    "build": "tsc -p tsconfig.json",
+    "dev-server": "tsc-watch --noClear -p tsconfig.json --onSuccess \"node code.js\""
   },
   "author": "",
   "license": "",
   "devDependencies": {
-    "@figma/plugin-typings": "^1.19.1"
+    "@figma/plugin-typings": "^1.19.1",
+    "prettier": "2.3.2",
+    "tsc-watch": "^4.4.0"
   }
 }
