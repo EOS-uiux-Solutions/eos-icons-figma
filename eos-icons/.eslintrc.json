@@ -1,32 +1,31 @@
 {
-    "env": {
-        "browser": true,
-        "es2021": true
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": ["plugin:react/recommended", "airbnb", "prettier"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
     },
-    "extends": [
-        "plugin:react/recommended",
-        "airbnb",
-        "prettier"
-    ],
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 12,
-        "sourceType": "module"
-    },
-    "plugins": [
-        "react",
-        "@typescript-eslint"
-    ],
-    "overrides": [
-        {
-            "files":["./code.js", "./code.ts"],
-            "rules":{
-                "no-undef":"off"
-            }
-        }
-    ]
-
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint"],
+  "globals": {
+    "parent": "writable"
+  },
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".ts"] }],
+    "no-restricted-globals": "off"
+  },
+  "overrides": [
+    {
+      "files": ["./code.js", "./src/code.ts"],
+      "rules": {
+        "no-undef": "off"
+      }
+    }
+  ]
 }
