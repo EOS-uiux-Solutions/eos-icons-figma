@@ -27,15 +27,15 @@ jobs:
           # no support for lts as of now with github actions.
           # issue link : https://github.com/actions/setup-node/issues/26
           node-version: "14"
-      
+
       - name: Npm install
-        run:  cd eos-icons && npm install
+        run: cd eos-icons && npm install
 
       - name: Check Formatting
         run: cd eos-icons && npx prettier --check .
 
       - name: Check Linting
         run: cd eos-icons && npx eslint .
-      
+
       - name: Check Build
         run: cd eos-icons && npx webpack
