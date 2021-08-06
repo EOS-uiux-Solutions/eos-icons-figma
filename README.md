@@ -46,3 +46,8 @@ We recommend writing TypeScript code using Visual Studio code:
 1. Download Visual Studio Code if you haven't already: https://code.visualstudio.com/.
 2. Open this directory in Visual Studio Code.
 3. Run `npx webpack`.
+4. Open `Figma`, click on `Main Menu`, and `Plugins`.
+5. Select `Development` and `Create Plugin`.
+6. Select `Link to Existing Plugin` and add the `manifest.json` from the folder.
+7. Plugin has been added successfully now.
+8. Click on `Menu Menu`, `Plugins`, `Development` and finally `eos-icons`.
