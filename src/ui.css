@@ -1,32 +1,108 @@
-html,
 body {
-  margin: 0;
-  padding: 0;
-  background-color: #e5e5e5;
+  margin: 10px 30px;
+  font-family: "Spartan", sans-serif;
 }
-.container {
-  width: 90%;
-  margin: auto;
-  margin-top: 10vh;
+* {
+  font-family: "Spartan", sans-serif;
 }
-.search {
-  border: 1px solid #000;
-  display: block;
-  text-align: left;
-  width: 70%;
-  padding: 10px;
+.dialog form {
+  width: 360px;
 }
-.submit {
-  width: 25%;
-}
-.flex-container {
-  display: flex;
+.h1 {
+  align-items: center;
   justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  display: inline-block;
+  font-weight: 700;
+  position: relative;
+  text-transform: uppercase;
 }
-.title {
-  font-family: Arial, Helvetica, sans-serif;
+.label {
+  margin: 0 8px 0 0;
 }
-.loading {
-  display: none;
-  padding-top: 1rem;
+
+.iconDialog svg {
+  width: 50px;
+  height: 50px;
+}
+
+.select-tag {
+  width: 50%;
+}
+
+.select-container {
+  display: flex;
+  column-gap: 10%;
+  margin: 15px 0;
+}
+.button-container {
+  margin: 30px;
+  display: flex;
+  justify-content: center;
+}
+.category-container {
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
+.button-container button {
+  color: #00ccd1;
+  background-color: white;
+  border: 1px solid #00ccd1;
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+.select-container label {
+  width: 45%;
+  padding-right: 5%;
+}
+.select-container label:first-of-type {
+  width: 50%;
+}
+
+.select-container select {
+  width: 100%;
+}
+
+.image-box {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.image-container {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px 10px 0;
+}
+
+.category-container span {
+  font-weight: 700;
+  font-size: 16px;
+  padding: 4px 0;
+  color: #00ccd1;
+  margin-bottom: 20px;
+}
+select,
+input {
+  padding: 2px 0;
+  font-size: 16px;
+}
+.searchInput {
+  display: flex;
+  height: 30px;
+}
+.searchInput svg {
+  width: 50px;
+  height: 30px;
+}
+.alert {
+  position: absolute;
+  top: 10%;
+  left: 35%;
+  background: white;
+  padding: 10px;
 }
