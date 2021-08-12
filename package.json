@@ -8,11 +8,13 @@
     "format": "npx prettier --write .",
     "checkFormat": "npx prettier --check .",
     "prepare": "husky install",
-    "huskyFormat": "npm run lint && npm run checkFormat"
+    "huskyFormat": "npm run lint && npm run checkFormat",
+    "build": "webpack mode --development"
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "@babel/preset-typescript": "^7.14.5",
     "@figma/plugin-typings": "^1.19.1",
     "@types/react": "^17.0.14",
     "@types/react-dom": "^17.0.9",
@@ -25,17 +27,18 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^7.0.0",
     "prettier": "2.3.2",
     "tsc-watch": "^4.4.0",
-    "typescript": "^4.3.5",
-    "husky": "^7.0.0"
+    "typescript": "^4.3.5"
   },
   "dependencies": {
     "css-loader": "^3.1.0",
     "eos-icons": "^5.1.0",
-    "eos-icons-react": "^1.0.0",
+    "eos-icons-react": "2.0.1",
     "html-webpack-inline-source-plugin": "0.0.10",
     "html-webpack-plugin": "^3.2.0",
+    "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "style-loader": "^0.23.1",
