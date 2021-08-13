@@ -39,3 +39,6 @@ jobs:
 
       - name: Check Build
         run: npx webpack
+
+      - name: Run test
+        run: npm test
