@@ -1,9 +1,8 @@
 import React from "react";
-import { any, func, string, shape, instanceOf } from "prop-types";
+import { any, func, shape, instanceOf } from "prop-types";
 import EosForm from "./EosForm";
 
 const FormHolder = ({
-  helperText,
   inputField,
   handleKeyUp,
   onSearch,
@@ -14,11 +13,14 @@ const FormHolder = ({
 }) => (
   <div className="iconDialog">
     <h1 className="h1">
-      <span>EOS</span>
+      <img
+        src="https://eos-icons.com/static/media/eos-icons-logo.b8cf23f8.svg"
+        alt="Company Logo"
+        className="logo"
+      />
     </h1>
     <hr />
     <p>Click on the icon to copy it</p>
-    <p>{helperText}</p>
     <EosForm
       inputField={inputField}
       handleKeyUp={handleKeyUp}
@@ -32,7 +34,6 @@ const FormHolder = ({
 );
 
 FormHolder.propTypes = {
-  helperText: string.isRequired,
   inputField: shape({ current: instanceOf(HTMLInputElement) }).isRequired,
   searchCategory: shape({ current: instanceOf(HTMLSelectElement) }).isRequired,
   searchTheme: shape({ current: instanceOf(HTMLSelectElement) }).isRequired,
