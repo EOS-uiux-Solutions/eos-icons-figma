@@ -17,10 +17,7 @@ const FormHolder = ({
       <span>EOS</span>
     </h1>
     <hr />
-    <p>
-      Search for icons from the EOS collection or copy from one of the options
-      below.(Click on the icon to copy it)
-    </p>
+    <p>Click on the icon to copy it</p>
     <p>{helperText}</p>
     <EosForm
       inputField={inputField}

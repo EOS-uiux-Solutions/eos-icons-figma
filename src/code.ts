@@ -4,10 +4,11 @@ figma.showUI(__html__, {
   height: 600,
 });
 
-figma.ui.onmessage = (msg) => {
+figma.ui.onmessage = (msg: { type: string; svg: any; name: string }) => {
   if (msg.type === "handle-icon") {
     const nodes: SceneNode[] = [];
     const icon = figma.createNodeFromSvg(msg.svg);
+    icon.name = msg.name;
     icon.rescale(3);
     nodes.push(icon);
     figma.currentPage.selection = nodes;

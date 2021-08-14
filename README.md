@@ -2,19 +2,15 @@
 
 Figma extension for EOS-icons
 
-## Contributing
+[![build-run](https://github.com/EOS-uiux-Solutions/eos-icons-figma/actions/workflows/build.yml/badge.svg)](https://github.com/EOS-uiux-Solutions/eos-icons-figma/actions/workflows/build.yml)
 
-- Follow the Figma plugin [prerequisites](https://www.figma.com/plugin-docs/prerequisites/) and [setup guide](https://www.figma.com/plugin-docs/setup/).
-- Open the create a plugin page and select `Link existing plugin`.
-- choose the `manifest.json` file from `eos-icons/manifest.json`.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Steps to run it locally
 
-Below are the steps to get your plugin running. You can also find instructions at:
+Below are the steps to get your plugin running
 
-https://www.figma.com/plugin-docs/setup/
-
-This plugin template uses Typescript and NPM, two standard tools in creating JavaScript applications.
+The plugin uses Typescript and NPM, two standard tools in creating JavaScript applications.
 
 First, download Node.js which comes with NPM. This will allow you to install TypeScript and other
 libraries. You can find the download link here:

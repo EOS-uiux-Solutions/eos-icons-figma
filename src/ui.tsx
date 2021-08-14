@@ -23,12 +23,13 @@ const App = () => {
   );
   const [iconsContainer, updateIcons] = useState<ReactElement[]>(null);
   const [alert, updateAlert] = useState<boolean>(false);
-  const pushToNode = useCallback((svg: any) => {
+  const pushToNode = useCallback((svg: any, name: string) => {
     parent.postMessage(
       {
         pluginMessage: {
           type: "handle-icon",
           svg: ReactDOMServer.renderToStaticMarkup(svg),
+          name,
         },
       },
       "*"
@@ -40,18 +41,38 @@ const App = () => {
   }, []);
 
   const searchIconsByName = useCallback((name, theme, option) => {
-    const icons = [];
+    const icons: {
+      EOSReactIcon: any;
+      name: string;
+    }[] = [];
     EOSIconsList[option].forEach((icon) => {
       const isFilledAvailable = "hasOutlined" in icon && icon.hasOutlined;
       const isFilledSelected = theme === "Filled";
-      if (
-        icon.name.indexOf(name) !== -1 &&
-        (!isFilledSelected || (isFilledSelected && isFilledAvailable))
-      ) {
-        const nameIcon = `Eos_${icon.name}_${theme}`.toUpperCase();
-        const EOSReactIcon = EOSIcons[nameIcon];
-        if (EOSReactIcon !== undefined) {
-          icons.push({ EOSReactIcon, name: nameIcon });
+
+      if (icon.name.indexOf(name) !== -1) {
+        if (theme === "All") {
+          const nameFilledIcon = `Eos_${icon.name}_FILLED`.toUpperCase();
+          const nameOutlinedIcon = `Eos_${icon.name}_OUTLINED`.toUpperCase();
+          const EOSFilledIcon = EOSIcons[nameFilledIcon];
+          const EOSOutlinedIcon = EOSIcons[nameOutlinedIcon];
+          if (EOSFilledIcon) {
+            icons.push({ EOSReactIcon: EOSFilledIcon, name: nameFilledIcon });
+          }
+          if (EOSOutlinedIcon) {
+            icons.push({
+              EOSReactIcon: EOSOutlinedIcon,
+              name: nameOutlinedIcon,
+            });
+          }
+        } else if (
+          !isFilledSelected ||
+          (isFilledSelected && isFilledAvailable)
+        ) {
+          const nameIcon = `Eos_${icon.name}_${theme}`.toUpperCase();
+          const EOSReactIcon = EOSIcons[nameIcon];
+          if (EOSReactIcon) {
+            icons.push({ EOSReactIcon, name: nameIcon });
+          }
         }
       }
     });
@@ -68,7 +89,10 @@ const App = () => {
     );
   }, []);
   const createIcons = useCallback((option) => {
-    const icons = [];
+    const icons: {
+      EOSReactIcon: any;
+      name: string;
+    }[] = [];
     const limit =
       EOSIconsList[option].length < 10 ? EOSIconsList[option].length : 10;
     // eslint-disable-next-line no-plusplus
@@ -78,7 +102,7 @@ const App = () => {
         ? `Eos_${icon.name}_Filled`.toUpperCase()
         : `Eos_${icon.name}_Outlined`.toUpperCase();
       const EOSReactIcon = EOSIcons[name];
-      if (EOSReactIcon !== undefined) {
+      if (EOSReactIcon) {
         icons.push({ EOSReactIcon, name });
       }
     }
@@ -107,7 +131,7 @@ const App = () => {
     const theme = searchTheme.current.value;
     const name = inputField.current.value;
     let iconList;
-    if (category === "all") {
+    if (category === "All") {
       iconList = OptionsList.map((option) =>
         searchIconsByName(name, theme, option)
       );
