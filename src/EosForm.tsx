@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { shape, func, instanceOf } from "prop-types";
-import { EOS_CANCEL_OUTLINED } from "eos-icons-react";
+import { EOS_CLOSE_OUTLINED } from "eos-icons-react";
 import OptionsList from "./optionList.json";
 import "./ui.css";
 
@@ -33,7 +33,7 @@ const EosForm = ({
           onKeyUp={handleKeyUp}
         />
         <div onClick={clearValue}>
-          <EOS_CANCEL_OUTLINED size="sm" />
+          <EOS_CLOSE_OUTLINED size="sm" />
         </div>
       </label>
       <div className="select-container">
@@ -74,11 +74,6 @@ const EosForm = ({
             ))}
           </select>
         </label>
-      </div>
-      <div className="button-container">
-        <button type="button" className="search" onClick={onSearch}>
-          Search
-        </button>
       </div>
     </div>
   );

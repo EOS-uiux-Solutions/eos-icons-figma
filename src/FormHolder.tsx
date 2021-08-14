@@ -1,6 +1,7 @@
 import React from "react";
 import { any, func, shape, instanceOf } from "prop-types";
 import EosForm from "./EosForm";
+import Info from "./assets/info-circle-solid.svg";
 
 const FormHolder = ({
   inputField,
@@ -29,6 +30,11 @@ const FormHolder = ({
       searchCategory={searchCategory}
       clearValue={clearValue}
     />
+    <hr style={{ margin: "25px 0 0" }} />
+    <div className="info-box">
+      <img src={Info} alt="info" />
+      <p>Click on the icon to copy it</p>
+    </div>
     {iconOptions}
   </div>
 );

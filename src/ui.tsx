@@ -36,6 +36,15 @@ const App = () => {
       updateAlert(false);
     }, 1000);
   }, []);
+  const debounce = useCallback((func: () => void, timeout = 300) => {
+    let timer: ReturnType<typeof setTimeout>;
+    return () => {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        func.apply(this);
+      }, timeout);
+    };
+  }, []);
 
   const searchIconsByName = useCallback((name, theme, option) => {
     const icons: {
@@ -123,6 +132,7 @@ const App = () => {
     updateIcons(OptionsList.map((option) => createIcons(option)));
   }, []);
   const onSearch = useCallback(() => {
+    console.log("this is getting called");
     const category = searchCategory.current.value;
     const theme = searchTheme.current.value;
     const name = inputField.current.value;
@@ -137,11 +147,9 @@ const App = () => {
     updateIcons(iconList);
   }, []);
 
-  const handleKeyUp = useCallback((event) => {
-    if (event.key === "Enter") {
-      event.preventDefault();
-      onSearch();
-    }
+  const handleKeyUp = useCallback(() => {
+    console.log("here");
+    debounce(onSearch)();
   }, []);
 
   return (

@@ -61,6 +61,7 @@ body {
   width: 100%;
   border: none;
   border-bottom: 1px solid black;
+  cursor: pointer;
 }
 
 .image-box {
@@ -105,6 +106,20 @@ input {
 .searchInput svg {
   width: 50px;
   height: 30px;
+  cursor: pointer;
+}
+.info-box {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  margin-bottom: 10px;
+}
+.info-box img {
+  width: 20px;
+  height: 20px;
+}
+.info-box p {
+  font-size: 14px;
 }
 .alert {
   position: absolute;
