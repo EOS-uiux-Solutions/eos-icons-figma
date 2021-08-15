@@ -4,7 +4,7 @@ import { EOS_CANCEL_OUTLINED } from "eos-icons-react";
 import OptionsList from "./optionList.json";
 import "./ui.css";
 
-const iconOptions = ["Outlined", "Filled"];
+const iconOptions = ["All", "Outlined", "Filled"];
 const EosForm = ({
   inputField,
   searchCategory,
@@ -13,7 +13,7 @@ const EosForm = ({
   onSearch,
   clearValue,
 }) => {
-  const addOptions = ["all", ...OptionsList];
+  const addOptions = ["All", ...OptionsList];
   const [category, setCategory] = useState<string>(addOptions[0]);
   const [theme, setTheme] = useState<string>(iconOptions[0]);
   const options = addOptions.map((el) => (
