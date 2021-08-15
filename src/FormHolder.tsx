@@ -1,7 +1,8 @@
 import React from "react";
 import { any, func, shape, instanceOf } from "prop-types";
+import { EOS_INFO_FILLED } from "eos-icons-react";
 import EosForm from "./EosForm";
-import Info from "./assets/info-circle-solid.svg";
+import Logo from "./assets/eos-icon.svg";
 
 const FormHolder = ({
   inputField,
@@ -14,14 +15,9 @@ const FormHolder = ({
 }) => (
   <div className="iconDialog">
     <h1 className="h1">
-      <img
-        src="https://eos-icons.com/static/media/eos-icons-logo.b8cf23f8.svg"
-        alt="Company Logo"
-        className="logo"
-      />
+      <img src={Logo} alt="Company Logo" className="logo" />
     </h1>
     <hr />
-    <p>Click on the icon to copy it</p>
     <EosForm
       inputField={inputField}
       handleKeyUp={handleKeyUp}
@@ -32,7 +28,7 @@ const FormHolder = ({
     />
     <hr style={{ margin: "25px 0 0" }} />
     <div className="info-box">
-      <img src={Info} alt="info" />
+      <EOS_INFO_FILLED />
       <p>Click on the icon to copy it</p>
     </div>
     {iconOptions}

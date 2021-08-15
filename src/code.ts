@@ -13,6 +13,5 @@ figma.ui.onmessage = (msg: { type: string; svg: any; name: string }) => {
     nodes.push(icon);
     figma.currentPage.selection = nodes;
     figma.viewport.scrollAndZoomIntoView(nodes);
-    figma.closePlugin();
   }
 };

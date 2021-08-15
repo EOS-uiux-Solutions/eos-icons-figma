@@ -132,7 +132,6 @@ const App = () => {
     updateIcons(OptionsList.map((option) => createIcons(option)));
   }, []);
   const onSearch = useCallback(() => {
-    console.log("this is getting called");
     const category = searchCategory.current.value;
     const theme = searchTheme.current.value;
     const name = inputField.current.value;
@@ -148,7 +147,6 @@ const App = () => {
   }, []);
 
   const handleKeyUp = useCallback(() => {
-    console.log("here");
     debounce(onSearch)();
   }, []);
 
