@@ -18,9 +18,6 @@ const App = () => {
   const searchCategory = useRef<HTMLSelectElement>();
   const searchTheme = useRef<HTMLSelectElement>();
   const inputField = useRef<HTMLInputElement>();
-  const [helperText, setHelperText] = useState(
-    "Let's start by searching abstract."
-  );
   const [iconsContainer, updateIcons] = useState<ReactElement[]>(null);
   const [alert, updateAlert] = useState<boolean>(false);
   const pushToNode = useCallback((svg: any, name: string) => {
@@ -38,6 +35,15 @@ const App = () => {
     setTimeout(() => {
       updateAlert(false);
     }, 1000);
+  }, []);
+  const debounce = useCallback((func: () => void, timeout = 300) => {
+    let timer: ReturnType<typeof setTimeout>;
+    return () => {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        func.apply(this);
+      }, timeout);
+    };
   }, []);
 
   const searchIconsByName = useCallback((name, theme, option) => {
@@ -123,7 +129,6 @@ const App = () => {
 
   const clearValue = useCallback(() => {
     inputField.current.value = "";
-    setHelperText("Let's start by searching abstract.");
     updateIcons(OptionsList.map((option) => createIcons(option)));
   }, []);
   const onSearch = useCallback(() => {
@@ -141,12 +146,8 @@ const App = () => {
     updateIcons(iconList);
   }, []);
 
-  const handleKeyUp = useCallback((event) => {
-    setHelperText(`We would be searching for ${inputField.current.value}`);
-    if (event.key === "ArrowRight") {
-      event.preventDefault();
-      onSearch();
-    }
+  const handleKeyUp = useCallback(() => {
+    debounce(onSearch)();
   }, []);
 
   return (
@@ -157,7 +158,6 @@ const App = () => {
         </div>
       ) : null}
       <FormHolder
-        helperText={helperText}
         inputField={inputField}
         handleKeyUp={handleKeyUp}
         onSearch={onSearch}
