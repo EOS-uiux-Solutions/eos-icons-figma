@@ -6,6 +6,8 @@ Figma extension for EOS-icons
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+[![codecov](https://codecov.io/gh/Abhirup-99/eos-icons-adobe-xd/branch/main/graph/badge.svg?token=EG31DCAQR5)](https://codecov.io/gh/Abhirup-99/eos-icons-adobe-xd)
+
 ## Steps to run it locally
 
 Below are the steps to get your plugin running
