@@ -4,13 +4,15 @@ figma.showUI(__html__, {
   height: 600,
 });
 
+let prevLoc = figma.viewport.center.x;
+const spaceBtwIcon: number = 20;
 figma.ui.onmessage = (msg: { type: string; svg: any; name: string }) => {
   if (msg.type === "handle-icon") {
-    const nodes: SceneNode[] = [];
     const icon = figma.createNodeFromSvg(msg.svg);
     icon.name = msg.name;
-    nodes.push(icon);
-    figma.currentPage.selection = nodes;
-    figma.viewport.scrollAndZoomIntoView(nodes);
+    icon.x = prevLoc;
+    prevLoc += icon.width + spaceBtwIcon;
+    icon.y = figma.viewport.center.y;
+    figma.currentPage.selection = [icon];
   }
 };
