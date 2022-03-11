@@ -9,7 +9,6 @@ figma.ui.onmessage = (msg: { type: string; svg: any; name: string }) => {
     const nodes: SceneNode[] = [];
     const icon = figma.createNodeFromSvg(msg.svg);
     icon.name = msg.name;
-    icon.rescale(3);
     nodes.push(icon);
     figma.currentPage.selection = nodes;
     figma.viewport.scrollAndZoomIntoView(nodes);
