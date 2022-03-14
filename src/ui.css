@@ -1,5 +1,5 @@
 body {
-  font-family: "Spartan", sans-serif;
+  margin: 0px;
 }
 * {
   font-family: "Spartan", sans-serif;
@@ -7,9 +7,7 @@ body {
 .dialog form {
   width: 360px;
 }
-.logo {
-  width: 150px;
-}
+
 .label {
   margin: 0 8px 0 0;
 }
@@ -94,13 +92,21 @@ input {
   outline: none;
   margin-right: 15px;
 }
-.searchInput {
+
+.searchBar {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  position: sticky;
+}
+.inputField {
   display: flex;
   flex-direction: row;
   height: 30px;
   border: 0;
   width: 100%;
-  padding: 2px 0 2px 10px;
+  padding: 5;
   margin: 0px 0;
 }
 

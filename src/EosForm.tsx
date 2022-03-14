@@ -22,13 +22,22 @@ const EosForm = ({
 
   return (
     <div>
-      <div className="searchInput">
-        <input
-          ref={inputField}
-          type="search"
-          placeholder="Search"
-          onChange={handleOnChange}
-        />
+      <div className="searchBar">
+        <div style={{ margin: "auto 5 auto 5" }}>
+          <img
+            src="https://img.icons8.com/glyph-neue/24/000000/search--v1.png"
+            alt=""
+            style={{ width: 20, height: 20 }}
+          />
+        </div>
+        <div className="inputField">
+          <input
+            ref={inputField}
+            type="search"
+            placeholder="Search"
+            onChange={handleOnChange}
+          />
+        </div>
       </div>
 
       <div className="select-container">
