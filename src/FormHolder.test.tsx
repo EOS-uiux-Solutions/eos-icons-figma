@@ -36,12 +36,11 @@ it("renders the form and surrounding helper texts", () => {
     render(
       <FormHolder
         inputField={{ current: null }}
-        handleKeyUp={() => {}}
+        handleOnChange={() => {}}
         onSearch={() => {}}
         searchTheme={{ current: null }}
         searchCategory={{ current: null }}
         iconOptions={eosDivs}
-        clearValue={() => {}}
       />,
       container
     );
@@ -56,11 +55,10 @@ it("no options being shown", () => {
     render(
       <FormHolder
         inputField={{ current: null }}
-        handleKeyUp={() => {}}
+        handleOnChange={() => {}}
         onSearch={() => {}}
         searchTheme={{ current: null }}
         searchCategory={{ current: null }}
-        clearValue={() => {}}
       />,
       container
     );

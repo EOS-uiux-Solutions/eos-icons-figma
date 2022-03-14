@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { shape, func, instanceOf } from "prop-types";
-import { EOS_CLOSE_OUTLINED } from "eos-icons-react";
 import OptionsList from "./optionList.json";
 import "./ui.css";
 
@@ -9,9 +8,8 @@ const EosForm = ({
   inputField,
   searchCategory,
   searchTheme,
-  handleKeyUp,
+  handleOnChange,
   onSearch,
-  clearValue,
 }) => {
   const addOptions = ["All", ...OptionsList];
   const [category, setCategory] = useState<string>(addOptions[0]);
@@ -24,18 +22,15 @@ const EosForm = ({
 
   return (
     <div>
-      <label htmlFor="searchInput" className="searchInput">
+      <div className="searchInput">
         <input
           ref={inputField}
-          type="text"
-          id="searchInput"
-          placeholder="Search..."
-          onKeyUp={handleKeyUp}
+          type="search"
+          placeholder="Search"
+          onChange={handleOnChange}
         />
-        <div onClick={clearValue}>
-          <EOS_CLOSE_OUTLINED size="sm" />
-        </div>
-      </label>
+      </div>
+
       <div className="select-container">
         <label htmlFor="category">
           <div className="label">
@@ -83,8 +78,7 @@ EosForm.propTypes = {
   inputField: shape({ current: instanceOf(HTMLInputElement) }).isRequired,
   searchCategory: shape({ current: instanceOf(HTMLSelectElement) }).isRequired,
   searchTheme: shape({ current: instanceOf(HTMLSelectElement) }).isRequired,
-  handleKeyUp: func.isRequired,
+  handleOnChange: func.isRequired,
   onSearch: func.isRequired,
-  clearValue: func.isRequired,
 };
 export default EosForm;

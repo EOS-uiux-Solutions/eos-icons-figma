@@ -127,10 +127,6 @@ const App = () => {
     updateIcons(OptionsList.map((option) => createIcons(option)));
   }, []);
 
-  const clearValue = useCallback(() => {
-    inputField.current.value = "";
-    updateIcons(OptionsList.map((option) => createIcons(option)));
-  }, []);
   const onSearch = useCallback(() => {
     const category = searchCategory.current.value;
     const theme = searchTheme.current.value;
@@ -146,7 +142,7 @@ const App = () => {
     updateIcons(iconList);
   }, []);
 
-  const handleKeyUp = useCallback(() => {
+  const handleOnChange = useCallback(() => {
     debounce(onSearch)();
   }, []);
 
@@ -159,12 +155,11 @@ const App = () => {
       ) : null}
       <FormHolder
         inputField={inputField}
-        handleKeyUp={handleKeyUp}
+        handleOnChange={handleOnChange}
         onSearch={onSearch}
         searchTheme={searchTheme}
         searchCategory={searchCategory}
         iconOptions={iconsContainer}
-        clearValue={clearValue}
       />
     </React.Fragment>
   );

@@ -23,11 +23,10 @@ it("renders the form", () => {
     render(
       <EosForm
         inputField={{ current: null }}
-        handleKeyUp={() => {}}
+        handleOnChange={() => {}}
         onSearch={searchCategory}
         searchTheme={{ current: null }}
         searchCategory={{ current: null }}
-        clearValue={() => {}}
       />,
       container
     );
