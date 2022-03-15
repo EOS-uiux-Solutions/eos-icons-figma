@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { shape, func, instanceOf } from "prop-types";
+import SearchIcon from "./assets/search.svg";
 import OptionsList from "./optionList.json";
 import "./ui.css";
 
@@ -25,8 +26,8 @@ const EosForm = ({
       <div className="searchBar">
         <div style={{ margin: "auto 5 auto 5" }}>
           <img
-            src="https://img.icons8.com/glyph-neue/24/000000/search--v1.png"
-            alt=""
+            src={SearchIcon}
+            alt="maginifying glass"
             style={{ width: 20, height: 20 }}
           />
         </div>
