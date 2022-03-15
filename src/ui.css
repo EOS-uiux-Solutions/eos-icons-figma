@@ -17,16 +17,6 @@ body {
   height: 50px;
 }
 
-.select-tag {
-  width: 50%;
-}
-
-.select-container {
-  display: flex;
-  column-gap: 10%;
-  margin: 15px 0;
-  width: 100%;
-}
 .button-container {
   margin: 30px;
   display: flex;
@@ -44,21 +34,29 @@ body {
   border-radius: 5px;
   cursor: pointer;
 }
-.select-container label {
-  width: 45%;
-  padding-right: 5%;
+
+.select-container {
   display: flex;
-  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  height: 40;
 }
-.select-container label:first-of-type {
-  width: 50%;
+
+.select-container div {
+  width: 200px;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .select-container select {
   width: 100%;
+  height: 100%;
   border: none;
-  border-bottom: 1px solid black;
+  background: transparent;
   cursor: pointer;
+  padding: 2px 0;
+  font-size: 14px;
+  outline: none;
+  margin-right: 15px;
 }
 
 .image-box {
@@ -68,8 +66,6 @@ body {
 }
 
 .image-container {
-  width: 40px;
-  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -83,7 +79,7 @@ body {
   color: #00ccd1;
   margin-bottom: 20px;
 }
-select,
+
 input {
   padding: 2px 0;
   font-size: 16px;

@@ -23,7 +23,6 @@ const FormHolder = ({
       searchTheme={searchTheme}
       searchCategory={searchCategory}
     />
-    <hr style={{ margin: "25px 0 0" }} />
     <div className="info-box">
       <EOS_INFO_FILLED />
       <p>Click on the icon to copy it</p>

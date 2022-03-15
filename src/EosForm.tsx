@@ -41,10 +41,7 @@ const EosForm = ({
       </div>
 
       <div className="select-container">
-        <label htmlFor="category">
-          <div className="label">
-            <span>Category</span>
-          </div>
+        <div className="category">
           <select
             value={category}
             className="select-tag"
@@ -57,11 +54,8 @@ const EosForm = ({
           >
             {options}
           </select>
-        </label>
-        <label htmlFor="theme">
-          <div className="label">
-            <span>Theme</span>
-          </div>
+        </div>
+        <div className="theme">
           <select
             value={theme}
             className="select-tag"
@@ -77,7 +71,7 @@ const EosForm = ({
               </option>
             ))}
           </select>
-        </label>
+        </div>
       </div>
     </div>
   );
