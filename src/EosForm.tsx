@@ -23,7 +23,7 @@ const EosForm = ({
 
   return (
     <div>
-      <div className="searchBar">
+      <div className="search-bar">
         <div style={{ margin: "auto 5 auto 5" }}>
           <img
             src={SearchIcon}
@@ -31,7 +31,7 @@ const EosForm = ({
             style={{ width: 20, height: 20 }}
           />
         </div>
-        <div className="inputField">
+        <div className="input-field">
           <input
             ref={inputField}
             type="search"

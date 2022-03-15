@@ -97,14 +97,14 @@ input {
   margin-right: 15px;
 }
 
-.searchBar {
+.search-bar {
   display: flex;
   flex-direction: row;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   position: sticky;
 }
-.inputField {
+.input-field {
   display: flex;
   flex-direction: row;
   height: 30px;
