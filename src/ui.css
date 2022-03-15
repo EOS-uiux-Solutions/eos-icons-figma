@@ -1,5 +1,6 @@
 body {
   margin: 0px;
+  overflow-x: clip;
 }
 * {
   font-family: "Spartan", sans-serif;
@@ -11,8 +12,6 @@ body {
 .label {
   margin: 0 8px 0 0;
 }
-
-
 
 .iconDialog svg {
   width: 40px;
@@ -126,15 +125,14 @@ input {
   width: 20px;
   height: 20px;
   margin: 0 0 0 10px;
-
 }
 .info-box p {
   font-size: 14px;
 }
 .alert {
   position: absolute;
-  top: 10%;
-  left: 35%;
+  top: 20%;
+  left: 30%;
   background: white;
   padding: 10px;
 }
