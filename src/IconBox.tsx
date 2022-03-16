@@ -28,7 +28,7 @@ const IconBox = ({ option, icons, pushToNode }) => {
     />
   ));
   return (
-    <div key={option} style={{ marginLeft: "10px" }}>
+    <div key={option} style={{ margin: "0px 0px 0px 10px" }}>
       <div className="category-container">
         <span>{option}</span>
       </div>

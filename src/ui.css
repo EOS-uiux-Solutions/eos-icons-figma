@@ -2,15 +2,13 @@ body {
   margin: 0px;
   overflow-x: clip;
 }
+
 * {
   font-family: "Spartan", sans-serif;
 }
+
 .dialog form {
   width: 360px;
-}
-
-.label {
-  margin: 0 8px 0 0;
 }
 
 .iconDialog svg {
@@ -25,10 +23,7 @@ body {
   display: flex;
   justify-content: center;
 }
-.category-container {
-  margin-bottom: 10px;
-  text-transform: capitalize;
-}
+
 .button-container button {
   color: #00ccd1;
   background-color: white;
@@ -42,7 +37,7 @@ body {
   display: flex;
   width: 100%;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  height: 40;
+  height: 40px;
 }
 
 .select-container div {
@@ -56,7 +51,7 @@ body {
   border: none;
   background: transparent;
   cursor: pointer;
-  padding: 2px 0;
+  padding: 2px 0px;
   font-size: 14px;
   outline: none;
   margin-right: 15px;
@@ -72,24 +67,29 @@ body {
   display: block;
   justify-content: center;
   align-items: center;
-  height: 50;
-  width: 50;
+  height: 50px;
+  width: 50px;
 }
 
 .image-container:hover {
   background: #d3d3d3b8;
 }
 
+.category-container {
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
+
 .category-container span {
   font-weight: 700;
   font-size: 16px;
-  padding: 4px 0;
+  padding: 4px 0px;
   color: #00ccd1;
   margin-bottom: 20px;
 }
 
 input {
-  padding: 2px 0;
+  padding: 2px 0px;
   font-size: 16px;
   width: 100%;
   border: none;
@@ -104,14 +104,15 @@ input {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   position: sticky;
 }
+
 .input-field {
   display: flex;
   flex-direction: row;
   height: 30px;
-  border: 0;
+  border: none;
   width: 100%;
-  padding: 5;
-  margin: 0px 0;
+  padding: 5px;
+  margin: 0px;
 }
 
 .info-box {
@@ -121,18 +122,27 @@ input {
   margin-bottom: 10px;
   height: 40px;
 }
+
 .info-box svg {
   width: 20px;
   height: 20px;
-  margin: 0 0 0 10px;
+  margin: 0px 0px 0px 10px;
 }
+
 .info-box p {
   font-size: 14px;
 }
+
 .alert {
-  position: absolute;
-  top: 20%;
-  left: 30%;
+  position: fixed;
+  bottom: 10%;
+  display: flex;
+  width: 100%;
   background: white;
   padding: 10px;
+  z-index: 1;
+}
+
+.alert span {
+  margin: auto;
 }
