@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { shape, func, instanceOf } from "prop-types";
-import { EOS_CLOSE_OUTLINED } from "eos-icons-react";
+import SearchIcon from "./assets/search.svg";
 import OptionsList from "./optionList.json";
 import "./ui.css";
 
@@ -9,9 +9,8 @@ const EosForm = ({
   inputField,
   searchCategory,
   searchTheme,
-  handleKeyUp,
+  handleOnChange,
   onSearch,
-  clearValue,
 }) => {
   const addOptions = ["All", ...OptionsList];
   const [category, setCategory] = useState<string>(addOptions[0]);
@@ -24,23 +23,26 @@ const EosForm = ({
 
   return (
     <div>
-      <label htmlFor="searchInput" className="searchInput">
-        <input
-          ref={inputField}
-          type="text"
-          id="searchInput"
-          placeholder="Search..."
-          onKeyUp={handleKeyUp}
-        />
-        <div onClick={clearValue}>
-          <EOS_CLOSE_OUTLINED size="sm" />
+      <div className="search-bar">
+        <div style={{ margin: "auto 5px" }}>
+          <img
+            src={SearchIcon}
+            alt="maginifying glass"
+            style={{ width: "20px", height: "20px" }}
+          />
         </div>
-      </label>
+        <div className="input-field">
+          <input
+            ref={inputField}
+            type="search"
+            placeholder="Search"
+            onChange={handleOnChange}
+          />
+        </div>
+      </div>
+
       <div className="select-container">
-        <label htmlFor="category">
-          <div className="label">
-            <span>Category</span>
-          </div>
+        <div className="category">
           <select
             value={category}
             className="select-tag"
@@ -53,11 +55,8 @@ const EosForm = ({
           >
             {options}
           </select>
-        </label>
-        <label htmlFor="theme">
-          <div className="label">
-            <span>Theme</span>
-          </div>
+        </div>
+        <div className="theme">
           <select
             value={theme}
             className="select-tag"
@@ -73,7 +72,7 @@ const EosForm = ({
               </option>
             ))}
           </select>
-        </label>
+        </div>
       </div>
     </div>
   );
@@ -83,8 +82,7 @@ EosForm.propTypes = {
   inputField: shape({ current: instanceOf(HTMLInputElement) }).isRequired,
   searchCategory: shape({ current: instanceOf(HTMLSelectElement) }).isRequired,
   searchTheme: shape({ current: instanceOf(HTMLSelectElement) }).isRequired,
-  handleKeyUp: func.isRequired,
+  handleOnChange: func.isRequired,
   onSearch: func.isRequired,
-  clearValue: func.isRequired,
 };
 export default EosForm;

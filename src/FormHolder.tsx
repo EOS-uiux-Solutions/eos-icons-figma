@@ -6,27 +6,23 @@ import Logo from "./assets/eos-icon.svg";
 
 const FormHolder = ({
   inputField,
-  handleKeyUp,
+  handleOnChange,
   onSearch,
   searchTheme,
   searchCategory,
-  clearValue,
   iconOptions = null,
 }) => (
   <div className="iconDialog">
-    <h1 className="h1">
-      <img src={Logo} alt="Company Logo" className="logo" />
+    <h1 style={{ margin: "10px 0px 10px 10px" }}>
+      <img src={Logo} alt="Company Logo" style={{ width: "150px" }} />
     </h1>
-    <hr />
     <EosForm
       inputField={inputField}
-      handleKeyUp={handleKeyUp}
+      handleOnChange={handleOnChange}
       onSearch={onSearch}
       searchTheme={searchTheme}
       searchCategory={searchCategory}
-      clearValue={clearValue}
     />
-    <hr style={{ margin: "25px 0 0" }} />
     <div className="info-box">
       <EOS_INFO_FILLED />
       <p>Click on the icon to copy it</p>
@@ -39,9 +35,8 @@ FormHolder.propTypes = {
   inputField: shape({ current: instanceOf(HTMLInputElement) }).isRequired,
   searchCategory: shape({ current: instanceOf(HTMLSelectElement) }).isRequired,
   searchTheme: shape({ current: instanceOf(HTMLSelectElement) }).isRequired,
-  handleKeyUp: func.isRequired,
+  handleOnChange: func.isRequired,
   onSearch: func.isRequired,
-  clearValue: func.isRequired,
   iconOptions: any,
 };
 FormHolder.defaultProps = {

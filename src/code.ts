@@ -1,6 +1,6 @@
 /// <reference path="../node_modules/@figma/plugin-typings/index.d.ts" />
 figma.showUI(__html__, {
-  width: 600,
+  width: 400,
   height: 600,
 });
 

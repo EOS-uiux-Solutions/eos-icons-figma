@@ -1,44 +1,29 @@
 body {
-  margin: 10px 30px;
-  font-family: "Spartan", sans-serif;
+  margin: 0px;
+  overflow-x: clip;
 }
+
 * {
   font-family: "Spartan", sans-serif;
 }
+
 .dialog form {
   width: 360px;
 }
-.logo {
-  width: 150px;
-}
-.label {
-  margin: 0 8px 0 0;
-}
 
 .iconDialog svg {
-  width: 50px;
+  width: 40px;
   height: 50px;
+  display: block;
+  margin: auto;
 }
 
-.select-tag {
-  width: 50%;
-}
-
-.select-container {
-  display: flex;
-  column-gap: 10%;
-  margin: 15px 0;
-  width: 100%;
-}
 .button-container {
   margin: 30px;
   display: flex;
   justify-content: center;
 }
-.category-container {
-  margin-bottom: 10px;
-  text-transform: capitalize;
-}
+
 .button-container button {
   color: #00ccd1;
   background-color: white;
@@ -47,84 +32,117 @@ body {
   border-radius: 5px;
   cursor: pointer;
 }
-.select-container label {
-  width: 45%;
-  padding-right: 5%;
+
+.select-container {
   display: flex;
-  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  height: 40px;
 }
-.select-container label:first-of-type {
-  width: 50%;
+
+.select-container div {
+  width: 200px;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .select-container select {
   width: 100%;
+  height: 100%;
   border: none;
-  border-bottom: 1px solid black;
+  background: transparent;
   cursor: pointer;
+  padding: 2px 0px;
+  font-size: 14px;
+  outline: none;
+  margin-right: 15px;
 }
 
 .image-box {
   display: flex;
-  gap: 10px;
   flex-wrap: wrap;
+  margin-bottom: 8px;
 }
 
 .image-container {
-  width: 40px;
-  height: 40px;
-  display: flex;
+  display: block;
   justify-content: center;
   align-items: center;
-  margin: 0 10px 10px 0;
+  height: 50px;
+  width: 50px;
+}
+
+.image-container:hover {
+  background: #d3d3d3b8;
+}
+
+.category-container {
+  margin-bottom: 10px;
+  text-transform: capitalize;
 }
 
 .category-container span {
   font-weight: 700;
   font-size: 16px;
-  padding: 4px 0;
+  padding: 4px 0px;
   color: #00ccd1;
   margin-bottom: 20px;
 }
-select,
+
 input {
-  padding: 2px 0;
+  padding: 2px 0px;
   font-size: 16px;
   width: 100%;
   border: none;
   outline: none;
+  margin-right: 15px;
 }
-.searchInput {
+
+.search-bar {
   display: flex;
-  height: 30px;
-  border: 1px solid black;
-  width: 93%;
-  border-radius: 3px;
-  padding: 2px 0 2px 10px;
-  margin: 25px 0;
+  flex-direction: row;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  position: sticky;
 }
-.searchInput svg {
-  width: 50px;
+
+.input-field {
+  display: flex;
+  flex-direction: row;
   height: 30px;
-  cursor: pointer;
+  border: none;
+  width: 100%;
+  padding: 5px;
+  margin: 0px;
 }
+
 .info-box {
   display: flex;
   align-items: center;
   column-gap: 10px;
   margin-bottom: 10px;
+  height: 40px;
 }
+
 .info-box svg {
   width: 20px;
   height: 20px;
+  margin: 0px 0px 0px 10px;
 }
+
 .info-box p {
   font-size: 14px;
 }
+
 .alert {
-  position: absolute;
-  top: 10%;
-  left: 35%;
+  position: fixed;
+  bottom: 10%;
+  display: flex;
+  width: 100%;
   background: white;
   padding: 10px;
+  z-index: 1;
+}
+
+.alert span {
+  margin: auto;
 }
