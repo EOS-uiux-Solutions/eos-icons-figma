@@ -63,7 +63,25 @@ body {
   margin-bottom: 8px;
 }
 
+.image-container .image-container-text {
+  visibility: hidden;
+  cursor: default;
+  background-color: rgba(0, 0, 0, 0.801);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  margin: 20px 0px 0px 20px;
+}
+
+.image-container:hover .image-container-text {
+  visibility: visible;
+}
+
 .image-container {
+  position: relative;
   display: block;
   justify-content: center;
   align-items: center;
