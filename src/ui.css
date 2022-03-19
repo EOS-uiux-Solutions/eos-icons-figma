@@ -88,6 +88,14 @@ body {
   margin-bottom: 20px;
 }
 
+.eos-form {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: white;
+}
+
 input {
   padding: 2px 0px;
   font-size: 16px;
@@ -102,7 +110,6 @@ input {
   flex-direction: row;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   border-top: 1px solid rgba(0, 0, 0, 0.1);
-  position: sticky;
 }
 
 .input-field {
