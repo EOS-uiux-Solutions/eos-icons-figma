@@ -73,7 +73,7 @@ body {
   padding: 5px;
   position: absolute;
   z-index: 1;
-  margin: 20px 0px 0px 20px;
+  margin: 40px 0px 0px 20px;
 }
 
 .image-container:hover .image-container-text {
