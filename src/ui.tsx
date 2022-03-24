@@ -50,11 +50,12 @@ const App = () => {
     const icons: {
       EOSReactIcon: any;
       name: string;
+      showName: string;
     }[] = [];
     EOSIconsList[option].forEach((icon) => {
       const isFilledAvailable = "hasOutlined" in icon && icon.hasOutlined;
       const isFilledSelected = theme === "Filled";
-
+      const iconName = icon.name;
       if (icon.name.indexOf(name) !== -1) {
         if (theme === "All") {
           const nameFilledIcon = `Eos_${icon.name}_FILLED`.toUpperCase();
@@ -62,12 +63,17 @@ const App = () => {
           const EOSFilledIcon = EOSIcons[nameFilledIcon];
           const EOSOutlinedIcon = EOSIcons[nameOutlinedIcon];
           if (EOSFilledIcon) {
-            icons.push({ EOSReactIcon: EOSFilledIcon, name: nameFilledIcon });
+            icons.push({
+              EOSReactIcon: EOSFilledIcon,
+              name: nameFilledIcon,
+              showName: iconName,
+            });
           }
           if (EOSOutlinedIcon) {
             icons.push({
               EOSReactIcon: EOSOutlinedIcon,
               name: nameOutlinedIcon,
+              showName: iconName,
             });
           }
         } else if (
@@ -77,7 +83,7 @@ const App = () => {
           const nameIcon = `Eos_${icon.name}_${theme}`.toUpperCase();
           const EOSReactIcon = EOSIcons[nameIcon];
           if (EOSReactIcon) {
-            icons.push({ EOSReactIcon, name: nameIcon });
+            icons.push({ EOSReactIcon, name: nameIcon, showName: iconName });
           }
         }
       }
