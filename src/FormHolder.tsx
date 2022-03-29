@@ -16,13 +16,15 @@ const FormHolder = ({
     <h1 style={{ margin: "10px 0px 10px 10px" }}>
       <img src={Logo} alt="Company Logo" style={{ width: "150px" }} />
     </h1>
-    <EosForm
-      inputField={inputField}
-      handleOnChange={handleOnChange}
-      onSearch={onSearch}
-      searchTheme={searchTheme}
-      searchCategory={searchCategory}
-    />
+    <div className="eos-form">
+      <EosForm
+        inputField={inputField}
+        handleOnChange={handleOnChange}
+        onSearch={onSearch}
+        searchTheme={searchTheme}
+        searchCategory={searchCategory}
+      />
+    </div>
     <div className="info-box">
       <EOS_INFO_FILLED />
       <p>Click on the icon to copy it</p>
