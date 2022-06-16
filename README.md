@@ -48,6 +48,10 @@ We recommend writing TypeScript code using Visual Studio code:
 
 To make sure the test files are working correctly after the latest changes, run the following command: `npm test`
 
+## Check Linting Errors
+
+Run the following command to check if there are any linting errors: `npx eslint .`
+
 ## JS and CSS Quality Assurance
 
 Before submitting a PR/MR make sure your code is compliant with our JS and CSS rules by running: `npx prettier --check .`
