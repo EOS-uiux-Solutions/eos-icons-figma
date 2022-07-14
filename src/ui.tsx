@@ -55,7 +55,10 @@ const App = () => {
     EOSIconsList[option].forEach((icon) => {
       const isFilledAvailable = "hasOutlined" in icon && icon.hasOutlined;
       const isFilledSelected = theme === "Filled";
-      const iconName = icon.name;
+      let iconName = icon.name;
+      while (iconName.includes("_")) {
+        iconName = iconName.replace("_", " ");
+      }
       if (icon.name.indexOf(name) !== -1) {
         if (theme === "All") {
           const nameFilledIcon = `Eos_${icon.name}_FILLED`.toUpperCase();
