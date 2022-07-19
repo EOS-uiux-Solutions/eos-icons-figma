@@ -57,3 +57,10 @@ Run the following command to check if there are any linting errors: `npm run lin
 Before submitting a PR/MR make sure your code is compliant with our JS and CSS rules by running: `npm run checkFormat` and `npx prettier --check .`
 
 If you encounter any deploy error in JS try fixing it by running `npx prettier --write .`
+
+## Semantic Release
+
+Semantic Release helps in automating the whole package release workflow. semantic-release uses the commit messages to determine the consumer impact of changes in the codebase.
+
+To commit a release follow the link below:
+https://github.com/EOS-uiux-Solutions/wiki/blob/main/Semantic-Releases.md
