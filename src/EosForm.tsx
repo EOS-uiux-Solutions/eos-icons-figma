@@ -17,7 +17,10 @@ const EosForm = ({
   const [theme, setTheme] = useState<string>(iconOptions[0]);
   const options = addOptions.map((el) => (
     <option value={el} key={el}>
-      {el}
+      {el.replace(
+        /\w\S*/g,
+        (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
+      )}
     </option>
   ));
 
