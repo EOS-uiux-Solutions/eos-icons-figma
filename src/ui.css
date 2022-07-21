@@ -73,7 +73,12 @@ body {
   padding: 5px;
   position: absolute;
   z-index: 1;
-  margin: 40px 0px 0px 20px;
+  margin-top: 40px;
+  margin-left: -10px;
+}
+
+.image-container-text {
+  font-size: 12px;
 }
 
 .image-container:hover .image-container-text {
@@ -87,6 +92,7 @@ body {
   align-items: center;
   height: 50px;
   width: 50px;
+  cursor: pointer;
 }
 
 .image-container:hover {
