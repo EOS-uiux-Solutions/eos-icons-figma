@@ -12,8 +12,6 @@ body {
 }
 
 .iconDialog svg {
-  width: 40px;
-  height: 50px;
   display: block;
   margin: auto;
 }
@@ -37,7 +35,7 @@ body {
   display: flex;
   width: 100%;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  height: 40px;
+  height: 35px;
 }
 
 .select-container div {
@@ -52,7 +50,7 @@ body {
   background: transparent;
   cursor: pointer;
   padding: 2px 0px;
-  font-size: 14px;
+  font-size: 12px;
   outline: none;
   margin-right: 15px;
 }
@@ -75,10 +73,11 @@ body {
   z-index: 1;
   margin-top: 40px;
   margin-left: -10px;
+  overflow: hidden;
 }
 
 .image-container-text {
-  font-size: 12px;
+  font-size: 11px;
 }
 
 .image-container:hover .image-container-text {
@@ -90,12 +89,14 @@ body {
   display: block;
   justify-content: center;
   align-items: center;
-  height: 50px;
-  width: 50px;
+  width: 55px;
+  padding: 10px 0px;
   cursor: pointer;
+  margin: auto 5px;
 }
 
 .image-container:hover {
+  transition: all 0.3s ease-in-out;
   background: #d3d3d3b8;
 }
 
@@ -106,10 +107,10 @@ body {
 
 .category-container span {
   font-weight: 700;
-  font-size: 16px;
+  font-size: 14px;
   padding: 4px 0px;
   color: #00ccd1;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .eos-form {
@@ -122,7 +123,7 @@ body {
 
 input {
   padding: 2px 0px;
-  font-size: 16px;
+  font-size: 12px;
   width: 100%;
   border: none;
   outline: none;
@@ -139,7 +140,7 @@ input {
 .input-field {
   display: flex;
   flex-direction: row;
-  height: 30px;
+  height: 25px;
   border: none;
   width: 100%;
   padding: 5px;
@@ -149,19 +150,19 @@ input {
 .info-box {
   display: flex;
   align-items: center;
-  column-gap: 10px;
+  column-gap: 5px;
   margin-bottom: 10px;
   height: 40px;
 }
 
 .info-box svg {
-  width: 20px;
-  height: 20px;
-  margin: 0px 0px 0px 10px;
+  width: 15px;
+  height: 15px;
+  margin: 0px 0px 3px 10px;
 }
 
 .info-box p {
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .alert {
@@ -181,4 +182,69 @@ input {
 
 .alert span {
   margin: auto;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  box-shadow: inset 0 0 1px lightgray;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00ccd1;
+  border-radius: 10px;
+}
+
+.eos-info-container .eos-info {
+  visibility: hidden;
+  cursor: default;
+  border: 1px solid black;
+  background-color: white;
+  width: 250px;
+  height: 195px;
+  color: black;
+  text-align: center;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  margin-top: 5px;
+  right: 10px;
+}
+
+.eos-info-container:hover .eos-info {
+  visibility: visible;
+}
+
+.eos-info-container:not(hover) .eos-info {
+  transition: 0.2s ease-out;
+}
+
+.eos-info-container {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  margin: auto 5px;
+  cursor: pointer;
+}
+
+.eos-info {
+  font-size: 12px;
+}
+
+.no-icon-found {
+  position: fixed;
+  text-align: center;
+  display: flex;
+  left: 5%;
+  width: 75%;
+  background: white;
+  padding: 10px;
+  z-index: 1;
+  border: 1px solid;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  box-shadow: rgb(0, 0, 0) 2px 3px;
 }

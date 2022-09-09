@@ -10,7 +10,7 @@ const IconDiv = ({ EOSReactIcon, pushToNode, name, showName }) => (
     }}
   >
     <span className="image-container-text">{showName}</span>
-    {EOSReactIcon({ size: "xl" })}
+    {EOSReactIcon({ size: "26px" })}
   </div>
 );
 

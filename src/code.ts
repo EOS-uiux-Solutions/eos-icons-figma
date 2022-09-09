@@ -1,7 +1,7 @@
 /// <reference path="../node_modules/@figma/plugin-typings/index.d.ts" />
 figma.showUI(__html__, {
-  width: 400,
-  height: 600,
+  width: 295,
+  height: 550,
 });
 
 let prevLoc = figma.viewport.center.x;

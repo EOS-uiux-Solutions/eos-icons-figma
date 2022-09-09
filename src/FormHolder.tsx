@@ -13,9 +13,11 @@ const FormHolder = ({
   iconOptions = null,
 }) => (
   <div className="iconDialog">
-    <h1 style={{ margin: "10px 0px 10px 10px" }}>
-      <img src={Logo} alt="Company Logo" style={{ width: "150px" }} />
-    </h1>
+    <div style={{ textAlign: "center" }}>
+      <h1 style={{ margin: "10px 0px 10px 10px" }}>
+        <img src={Logo} alt="Company Logo" style={{ width: "100px" }} />
+      </h1>
+    </div>
     <div className="eos-form">
       <EosForm
         inputField={inputField}
